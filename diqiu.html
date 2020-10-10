@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			transform: scale(0.5);
+			position: relative;
+			padding: 1px;
+			height: 300px;
+			width: 300px;
+			margin:100px auto;
+		}	
+		.sunline{
+			position:relative;
+			height: 400px;
+			width: 400px;
+			border: 1px solid black;
+			border-radius: 50%;
+			margin: 50px 0 0 50px;
+			display: flex;
+			animation: rotate 5s infinite linear;
+		}
+		.sun{
+			height: 100px;
+			width: 100px;
+			margin: auto;
+			background-color: red;
+			border-radius: 50%;
+			box-shadow:0 0 10px red;
+		}
+		.earthline{
+			position: absolute;
+			right: 0;
+			top: 50%;
+			height: 275px;
+			width: 275px;
+			margin: -135px -135px 0 0;
+			border: 1px solid black;
+			border-radius: 50%;
+			display: flex;
+			animation: rotate 10s infinite linear;
+		}
+		.earth{
+			margin: auto;
+			height: 50px;
+			width: 50px;
+			background-color: green;
+			border-radius: 50%;
+		}
+		.moon{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			height: 25px;
+			width: 25px;
+			margin: -12px 0 0 -12px;
+			background-color: blue;
+			border-radius: 50%;
+		}
+		@keyframes rotate{
+			100%{transform:rotate(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="sunline">
+			<div class="sun"></div>
+			<div class="earthline">
+				<div class="earth"></div>
+				<div class="moon"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

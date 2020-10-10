@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		max-width: 100%;
+		min-width: 100%;
+		height: 100%;
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	li{
+		list-style: none;
+	}
+	.box{
+		width: 200px;
+		height: 200px;
+		background-size: 100% 100%;
+		position: absolute;
+		margin-left: 42%;
+		margin-top: 22%;
+		transform-style: preserve-3d;/*元素在3d盒子里进行展示*/
+		transform: rotateX(52deg);/*设置为沿X轴进行52度旋转*/
+		animation: move 5s linear infinite;/*5s匀速重复运动*/
+	}
+	.minbox{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		left: 50px;
+		top: 30px;
+		transform-style: preserve-3d;
+	}
+	.minbox li{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+
+	/*小方块颜色设置*/
+	.minbox li:nth-child(1){
+		background: skyblue;
+		transform:translateZ(50px);
+	}
+	.minbox li:nth-child(2){
+		background: orangered;
+		transform:rotateX(180deg) translateZ(50px);
+	}
+	.minbox li:nth-child(3){
+		background: palegreen;
+		transform:rotateX(-90deg) translateZ(50px);
+	}
+	.minbox li:nth-child(4){
+		background: lightgoldenrodyellow;
+		transform:rotateX(90deg) translateZ(50px);
+	}
+	.minbox li:nth-child(5){
+		background:hotpink;
+		transform:rotateY(-90deg) translateZ(50px);
+	}
+	.minbox li:nth-child(6){
+		background:violet;
+		transform:rotateY(90deg) translateZ(50px);
+	}
+	/*大方块颜色设置*/
+	.maxbox li:nth-child(1){
+		background: grey;
+		transform:rotateY(90deg)translateZ(50px);
+	}
+	.maxbox li:nth-child(2){
+	background: grey;
+	transform:translateZ(50px);
+	}
+	.maxbox li:nth-child(3){
+	background: grey;
+	transform:rotateX(-90deg) translateZ(50px);
+	}
+	.maxbox li:nth-child(4){
+	background: grey;
+	transform:rotateX(90deg) translateZ(50px);
+	}
+	.maxbox li:nth-child(5){
+	background: grey;
+	transform:rotateY(-90deg) translateZ(50px);
+	}
+	.maxbox li:nth-child(6){
+	background: grey;
+	transform:rotateY(90deg) translateZ(50px);
+	}
+	.maxbox{
+		width: 800px;
+		height: 400px;
+		position: absolute;
+		left: 0;
+		top:-20px;
+		transform-style: preserve-3d;
+	}
+	.maxbox li{
+	width: 200px;
+	height: 200px;
+	background: #fff;
+	border:1px solid #ccc;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.2;
+	transition:all 1s ease;
+	}
+	/*鼠标移入时获得效果*/
+	.maxbox li:nth-child(1){
+	transform:translateZ(100px);
+	}
+	.maxbox li:nth-child(2){
+	transform:rotateX(180deg) translateZ(100px);
+	}
+	.maxbox li:nth-child(3){
+	transform:rotateX(-90deg) translateZ(100px);
+	}
+	.maxbox li:nth-child(4){
+	transform:rotateX(90deg) translateZ(100px);
+	}
+	.maxbox li:nth-child(5){
+	transform:rotateY(-90deg) translateZ(100px);
+	}
+	.maxbox li:nth-child(6){
+	transform:rotateY(90deg) translateZ(100px);
+	}
+	.box:hover ol li:nth-child(1){
+	transform:translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(2){
+	transform:rotateX(180deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(3){
+	transform:rotateX(-90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(4){
+	transform:rotateX(90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(5){
+	transform:rotateY(-90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+.box:hover ol li:nth-child(6){
+	transform:rotateY(90deg) translateZ(300px);
+	width: 400px;
+	height: 400px;
+	opacity: 0.8;
+	left: -100px;
+	top: -100px;
+}
+/*设置动画在何时如何旋转*/
+@keyframes move{
+	0%{
+    	transform:perspective(1000px) rotateX(0deg)rotateY(0deg)rotateZ(0deg);
+    }
+    10%{
+       	transform:perspective(1000px) rotateX(90deg)rotateY(0deg)rotateZ(0deg);
+    }
+    20%{
+        transform:perspective(1000px) rotateX(90deg)rotateY(0deg)rotateZ(90deg);
+    }
+    30%{
+        transform:perspective(1000px) rotateX(180deg)rotateY(0deg)rotateZ(90deg);
+    }
+    40%{
+        transform:perspective(1000px) rotateX(180deg)rotateY(90deg)rotateZ(90deg);
+    }
+    50%{
+        transform:perspective(1000px) rotateX(270deg)rotateY(90deg)rotateZ(90deg);
+    }
+    60%{
+        transform:perspective(1000px) rotateX(270deg)rotateY(90deg)rotateZ(90deg);
+    }
+    80%{
+        transform:perspective(1000px) rotateX(0deg)rotateY(0deg)rotateZ(0deg);
+    }
+    100%{
+        transform:perspective(1000px) rotateX(0deg)rotateY(0deg)rotateZ(0deg);
+    }
+}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="minbox">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ol class="maxbox">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</body>
+</html>
